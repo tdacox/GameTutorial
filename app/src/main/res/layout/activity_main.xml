@@ -7,8 +7,43 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <com.example.gametutorial.GameView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="355dp"
+        android:layout_height="686dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.example.gametutorial.GameView
+            android:id="@+id/gameView"
+            android:layout_width="180dp"
+            android:layout_height="140dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.example.gametutorial.GameView
+            android:id="@+id/gameView2"
+            android:layout_width="180dp"
+            android:layout_height="140dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/gameView"
+            app:layout_constraintVertical_bias="0.026" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

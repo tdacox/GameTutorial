@@ -17,7 +17,7 @@ class GameView(context: Context, attributes: AttributeSet) : SurfaceView(context
    SurfaceHolder.Callback
 {
    private val thread: GameThread
-   private var grenade = Grenade(BitmapFactory.decodeResource(resources, R.drawable.grenade))
+   private var bioball = BioBall()
    private var player = Player(BitmapFactory.decodeResource(resources, R.drawable.grenade))
    private var touched: Boolean = false
    private var touchedX = 0
@@ -71,7 +71,7 @@ class GameView(context: Context, attributes: AttributeSet) : SurfaceView(context
     */
    fun update()
    {
-      grenade.update()
+      bioball.update()
       if (touched)
       {
          player.updateTouch(touchedX, touchedY)
@@ -85,7 +85,7 @@ class GameView(context: Context, attributes: AttributeSet) : SurfaceView(context
    {
       super.draw(canvas)
 
-      grenade.draw(canvas)
+      bioball.draw(canvas)
       player.draw(canvas)
    }
 
@@ -107,9 +107,9 @@ class GameView(context: Context, attributes: AttributeSet) : SurfaceView(context
       }
 
       // detect a hit
-      val grenadeRect = Rect(grenade.x, grenade.y, grenade.x + grenade.w, grenade.y + grenade.h)
+      val bioRect = Rect(bioball.x, bioball.y, bioball.x + bioball.w, bioball.y + bioball.h)
       val playerRect = Rect(player.x, player.y, player.x + player.w, player.y + player.h)
-      if (grenadeRect.intersect(playerRect))
+      if (bioRect.intersect(playerRect))
       {
          println("Collided.")
       }

@@ -9,7 +9,7 @@ class GameThread(private val surfaceHolder: SurfaceHolder, private val gameView:
    private var running: Boolean = false
 
    private val targetFPS =
-      15 // frames per second, the rate at which you would like to refresh the Canvas
+      10 // frames per second, the rate at which you would like to refresh the Canvas
 
    fun setRunning(isRunning: Boolean)
    {
